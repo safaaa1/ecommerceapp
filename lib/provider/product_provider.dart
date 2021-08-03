@@ -108,8 +108,9 @@ class ProductProvider with ChangeNotifier {
     featureSnapShot.docs.forEach(
       (element) {
         featureData = Product(
-            image: element.data()["image"], name: element.data()["name"]);
-        //price: element.data()["price"]);
+            image: element.data()["image"],
+            name: element.data()["name"],
+            price: element.data()["price"]);
         newList.add(featureData);
       },
     );
@@ -130,9 +131,8 @@ class ProductProvider with ChangeNotifier {
     featureSnapShot.docs.forEach(
       (element) {
         featureData = Product(
-            image: element.data()["image"],
-            name: element.data()["name"],
-            price: element.data()["price"]);
+            image: element.data()["image"], name: element.data()["name"]);
+        // price: element.data()["price"]);
         newList.add(featureData);
       },
     );

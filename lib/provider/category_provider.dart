@@ -140,9 +140,9 @@ class CategoryProvider with ChangeNotifier {
     shirtSnapShot.docs.forEach(
       (element) {
         shirtData = Product(
-            image: element.data()["image"],
-            name: element.data()["name"],
-            price: element.data()["price"]);
+            image: element.data()["image"], name: element.data()["name"]);
+
+        //price: element.data()["price"]);
         newList.add(shirtData);
       },
     );
@@ -210,9 +210,8 @@ class CategoryProvider with ChangeNotifier {
     shirtSnapShot.docs.forEach(
       (element) {
         shirtData = Product(
-            image: element.data()["image"],
-            name: element.data()["name"],
-            price: element.data()["price"]);
+            image: element.data()["image"], name: element.data()["name"]);
+        //price: element.data()["price"]);
         newList.add(shirtData);
       },
     );
@@ -234,9 +233,8 @@ class CategoryProvider with ChangeNotifier {
     shirtSnapShot.docs.forEach(
       (element) {
         shirtData = Product(
-            image: element.data()["image"],
-            name: element.data()["name"],
-            price: element.data()["price"]);
+            image: element.data()["image"], name: element.data()["name"]);
+        // price: element.data()["price"]);
         newList.add(shirtData);
       },
     );

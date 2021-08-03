@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:e_commerce/model/categoryicon.dart';
 import 'package:e_commerce/model/usermodel.dart';
 import 'package:e_commerce/screens/about.dart';
@@ -186,9 +188,11 @@ class _HomePageState extends State<HomePage> {
         autoplay: true,
         showIndicator: false,
         images: [
+          AssetImage("images/epices.jpg"),
+          AssetImage("images/miell.jpg"),
           AssetImage("images/fruits.jpg"),
-          AssetImage("images/miel.jpg"),
-          AssetImage("images/epicerie.jpg"),
+          AssetImage("images/beure.jpg"),
+          AssetImage("images/fromage.jpg"),
         ],
       ),
     );
@@ -204,7 +208,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (ctx) => ListProduct(
-                name: "Dress",
+                name: "Légumes",
                 snapShot: dress,
               ),
             ),
@@ -225,7 +229,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (ctx) => ListProduct(
-                name: "Shirt",
+                name: "Fruits",
                 snapShot: shirts,
               ),
             ),
@@ -246,7 +250,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (ctx) => ListProduct(
-                name: "Shoes",
+                name: "Epicerie Fine",
                 snapShot: shoes,
               ),
             ),
@@ -270,7 +274,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (ctx) => ListProduct(
-                name: "Pant",
+                name: "Epices",
                 snapShot: pant,
               ),
             ),
@@ -294,7 +298,7 @@ class _HomePageState extends State<HomePage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (ctx) => ListProduct(
-                name: "Tie",
+                name: "Hypermarché",
                 snapShot: tie,
               ),
             ),
@@ -384,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                           MaterialPageRoute(
                             builder: (ctx) => DetailScreen(
                               image: e.image,
-                              //price: e.price,
+                              price: e.price,
                               name: e.name,
                             ),
                           ),
@@ -392,7 +396,7 @@ class _HomePageState extends State<HomePage> {
                       },
                       child: SingleProduct(
                         image: e.image,
-                        // price: e.price,
+                        price: e.price,
                         name: e.name,
                       ),
                     ),
@@ -402,14 +406,13 @@ class _HomePageState extends State<HomePage> {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (ctx) => DetailScreen(
-                              image: e.image, // price: e.price,
-                              name: e.name),
+                              image: e.image, price: e.price, name: e.name),
                         ),
                       );
                     },
                     child: SingleProduct(
                       image: e.image,
-                      //price: e.price,
+                      price: e.price,
                       name: e.name,
                     ),
                   ),
@@ -427,7 +430,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: <Widget>[
         Container(
-          height: height * 0.1 - 30,
+          height: height * 0.1 - 10,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
@@ -486,7 +489,8 @@ class _HomePageState extends State<HomePage> {
                                 );
                               },
                               child: SingleProduct(
-                                  image: e.image, price: e.price, name: e.name),
+                                  image: e.image, // price: e.price,
+                                  name: e.name),
                             ),
                           ),
                           GestureDetector(
@@ -585,8 +589,7 @@ class _HomePageState extends State<HomePage> {
                     height: 20,
                   ),
                   _buildFeature(),
-                  // SizedBox(height: 20), //ena
-                  _buildNewAchives()
+                  _buildNewAchives(),
                 ],
               ),
             )
